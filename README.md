@@ -55,6 +55,57 @@ cd ../backend && python app.py
 
 Flask will serve the built `frontend/dist/` folder at `http://localhost:5000`.
 
+## Deploying to GCP (Cloud Run)
+
+The site is containerised with a multi-stage Dockerfile (Node builds the React app, Python serves it via gunicorn). Deployment targets Cloud Run in `europe-west2` (London).
+
+### One-time setup
+
+```bash
+# Authenticate
+gcloud auth login
+gcloud config set project YOUR_PROJECT_ID
+
+# Enable required APIs
+gcloud services enable run.googleapis.com \
+    artifactregistry.googleapis.com \
+    cloudbuild.googleapis.com
+
+# Create Artifact Registry repository
+gcloud artifacts repositories create williamson-prestige \
+    --repository-format=docker \
+    --location=europe-west2
+```
+
+### Manual deploy
+
+```bash
+# Build and push image
+gcloud builds submit --config cloudbuild.yaml \
+    --substitutions=_REGION=europe-west2,_REPO=williamson-prestige,_SERVICE=williamson-prestige
+```
+
+Or build and deploy in a single command without Cloud Build:
+
+```bash
+gcloud run deploy williamson-prestige \
+    --source . \
+    --region europe-west2 \
+    --allow-unauthenticated
+```
+
+### CI/CD via Cloud Build trigger
+
+Connect your GitHub repo in the GCP Console under **Cloud Build → Triggers**, point it at `cloudbuild.yaml`, and every push to `master` will build, push, and redeploy automatically.
+
+### Test the container locally
+
+```bash
+docker build -t williamson-prestige .
+docker run -p 8080:8080 williamson-prestige
+# Visit http://localhost:8080
+```
+
 ## Things to fill in before going live
 
 - `Contact.jsx` — replace `[Your Area]`, phone number, and email address
