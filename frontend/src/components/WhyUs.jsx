@@ -44,7 +44,7 @@ const POINTS = [
   {
     Icon: IconAward,
     title: 'Trusted & Experienced',
-    desc: 'Over a decade of automotive detailing experience with hundreds of satisfied customers and a five-star reputation.',
+    desc: 'Over 4 years of automotive detailing experience with hundreds of satisfied customers and a five-star reputation.',
   },
 ]
 

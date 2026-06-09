@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 
 const LINKS = [
   ['services', 'Services'],
+  ['gallery', 'Gallery'],
   ['why-us', 'Why Us'],
   ['testimonials', 'Reviews'],
+  ['instagram', 'Instagram'],
   ['contact', 'Contact'],
 ]
 
@@ -26,8 +28,7 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="container navbar-inner">
         <div className="navbar-logo" onClick={() => nav('hero')}>
-          <span className="logo-top">Williamson</span>
-          <span className="logo-main">Prestige</span>
+          <img src="/images/logo.jpeg" alt="Williamson Prestige" className="navbar-logo-img" />
         </div>
 
         <ul className={`navbar-links${open ? ' open' : ''}`}>

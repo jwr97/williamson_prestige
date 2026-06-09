@@ -1,7 +1,6 @@
 const STATS = [
-  { number: '500+', label: 'Vehicles Detailed' },
   { number: '5★', label: 'Average Rating' },
-  { number: '10+', label: 'Years Experience' },
+  { number: '4+', label: 'Years Experience' },
 ]
 
 export default function Hero() {
@@ -13,7 +12,7 @@ export default function Hero() {
       <div className="hero-grid" />
       <div className="container">
         <div className="hero-content">
-          <p className="hero-eyebrow">Mobile Valeting &amp; Detailing</p>
+          <img src="/images/logo-hero.jpeg" alt="Williamson Prestige" className="hero-logo-img" />
           <h1 className="hero-title">
             Your Vehicle,<br />
             Our <em>Obsession</em>

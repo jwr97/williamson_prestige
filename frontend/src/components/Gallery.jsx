@@ -1,0 +1,69 @@
+const BA_PAIRS = [
+  {
+    before: { src: '/images/range-rover-before.jpeg', alt: 'Range Rover Sport — foam pre-wash' },
+    after:  { src: '/images/range-rover-after.jpeg',  alt: 'Range Rover Sport — showroom finish' },
+    label: 'Range Rover Sport · Full Exterior Detail',
+  },
+  {
+    before: { src: '/images/corsa-before.jpeg', alt: 'Vauxhall Corsa interior — before' },
+    after:  { src: '/images/corsa-after.jpeg',  alt: 'Vauxhall Corsa interior — after' },
+    label:  'THE INTERIOR RESET — A full scrub and steam from roof lining to carpets. Freshly sanitised. Freshly cleaned. Freshly RESET.',
+  },
+  {
+    before: { src: '/images/defender-before.jpeg', alt: 'Land Rover Defender — heavily soiled' },
+    after:  { src: '/images/defender-after.jpeg',  alt: 'Land Rover Defender — exterior reset' },
+    label:  'THE EXTERIOR RESET — An exterior safe wash and liquid decontamination, leaving your paintwork popping, no matter how dirty.',
+  },
+]
+
+const GALLERY = [
+  { src: '/images/porsche-macan.jpeg',            alt: 'Porsche Macan — exterior detail' },
+  { src: '/images/porsche-panamera-interior.jpeg', alt: 'Porsche Panamera — interior detail' },
+  { src: '/images/porsche-taycan-front.jpeg',     alt: 'Porsche Taycan 4S — front exterior' },
+  { src: '/images/porsche-taycan-rear.jpeg',      alt: 'Porsche Taycan 4S — rear exterior' },
+  { src: '/images/porsche-taycan-interior.jpeg',  alt: 'Porsche Taycan 4S — interior detail' },
+  { src: '/images/exhaust-detail.jpeg',           alt: 'Exhaust pipe detail' },
+]
+
+export default function Gallery() {
+  return (
+    <section id="gallery" className="section gallery">
+      <div className="container">
+        <div className="section-head">
+          <p className="section-eyebrow">Our Work</p>
+          <h2 className="section-title">Real Results</h2>
+          <div className="section-rule" />
+          <p className="section-lead">
+            Every vehicle treated with the same meticulous care and professional-grade products — real customers, real transformations.
+          </p>
+        </div>
+
+        <h3 className="gallery-subheading">Before &amp; After</h3>
+        <div className="ba-pairs">
+          {BA_PAIRS.map((pair) => (
+            <div key={pair.label} className="ba-pair">
+              <div className="ba-image">
+                <img src={pair.before.src} alt={pair.before.alt} loading="lazy" />
+                <span className="ba-label ba-label-before">Before</span>
+              </div>
+              <div className="ba-image">
+                <img src={pair.after.src} alt={pair.after.alt} loading="lazy" />
+                <span className="ba-label ba-label-after">After</span>
+              </div>
+              <p className="ba-caption">{pair.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="gallery-subheading gallery-subheading--spaced">Recent Work</h3>
+        <div className="gallery-grid">
+          {GALLERY.map((item) => (
+            <div key={item.src} className="gallery-item">
+              <img src={item.src} alt={item.alt} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

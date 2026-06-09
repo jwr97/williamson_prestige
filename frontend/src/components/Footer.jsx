@@ -1,7 +1,9 @@
 const LINKS = [
   ['services', 'Services'],
+  ['gallery', 'Gallery'],
   ['why-us', 'Why Us'],
   ['testimonials', 'Reviews'],
+  ['instagram', 'Instagram'],
   ['contact', 'Contact'],
 ]
 
@@ -14,11 +16,9 @@ export default function Footer() {
       <div className="container">
         <div className="footer-inner">
           <div>
-            <div className="footer-logo navbar-logo">
-              <span className="logo-top">Williamson</span>
-              <span className="logo-main">Prestige</span>
+            <div className="footer-logo">
+              <img src="/images/logo.jpeg" alt="Williamson Prestige" className="footer-logo-img" />
             </div>
-            <p className="footer-tagline">Professional Mobile Valeting &amp; Detailing</p>
           </div>
           <ul className="footer-links">
             {LINKS.map(([id, label]) => (
