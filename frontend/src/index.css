@@ -511,6 +511,17 @@ input, textarea, select { font-family: inherit; }
 .instagram-setup-text { color: var(--text-dim); font-size: 0.9rem; }
 .instagram-setup-text a { color: var(--gold); transition: color var(--ease); }
 .instagram-setup-text a:hover { color: var(--gold-light); }
+.instagram-screenshot {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color var(--ease), transform var(--ease);
+}
+.instagram-screenshot:hover { border-color: var(--gold); transform: translateY(-3px); }
+.instagram-screenshot img { width: 100%; height: auto; display: block; }
 .instagram-cta { display: flex; justify-content: center; margin-top: 2rem; }
 
 /* ===== FOOTER ===== */
