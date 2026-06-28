@@ -1,5 +1,10 @@
 const BA_PAIRS = [
   {
+    left:  { src: '/images/l200-interior-before.jpeg', alt: 'Mitsubishi L200 interior — before deep clean', badge: 'Before' },
+    right: { src: '/images/l200-interior-after.jpeg',  alt: 'Mitsubishi L200 interior — after deep clean',  badge: 'After' },
+    label: 'THE DEEP CLEAN — A full interior deep clean, lifting ingrained dirt and grime from carpets, mats and trim back to fresh.',
+  },
+  {
     left:  { src: '/images/range-rover-after.jpeg',    alt: 'Range Rover Sport — exterior' },
     right: { src: '/images/range-rover-interior.jpeg', alt: 'Range Rover Sport — interior' },
     label: 'Maintenance Plan — Deep clean service for half the price, every month.',
@@ -17,6 +22,7 @@ const BA_PAIRS = [
 ]
 
 const GALLERY = [
+  { src: '/images/l200-exterior.jpeg',            alt: 'Mitsubishi L200 Barbarian — exterior detail' },
   { src: '/images/porsche-macan.jpeg',            alt: 'Porsche Macan — exterior detail' },
   { src: '/images/porsche-panamera-interior.jpeg', alt: 'Porsche Panamera — interior detail' },
   { src: '/images/porsche-taycan-front.jpeg',     alt: 'Porsche Taycan 4S — front exterior' },
