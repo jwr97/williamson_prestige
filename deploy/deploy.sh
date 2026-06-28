@@ -5,7 +5,7 @@ set -euo pipefail
 
 # ── Edit these ────────────────────────────────────────────────────────────────
 PROJECT_ID="williamson-prestige"
-REGION="europe-west2"
+REGION="europe-west1"
 SERVICE="williamson-prestige"
 GMAIL_USER="benwilliamson046@gmail.com"        # the Gmail account that SENDS the alert
 NOTIFY_EMAIL="Williamson.prestige@outlook.com" # where enquiries should ARRIVE

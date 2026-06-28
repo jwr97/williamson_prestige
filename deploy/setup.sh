@@ -5,7 +5,7 @@ set -euo pipefail
 
 # ── Edit these ────────────────────────────────────────────────────────────────
 PROJECT_ID="williamson-prestige"
-REGION="europe-west2"
+REGION="europe-west1"
 REPO="williamson-prestige"
 # ──────────────────────────────────────────────────────────────────────────────
 
