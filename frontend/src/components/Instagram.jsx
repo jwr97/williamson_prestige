@@ -19,7 +19,7 @@ export default function Instagram() {
           aria-label="View @williamson.prestige on Instagram"
         >
           <img
-            src="/images/instagram-feed.png"
+            src="/images/instagram-feed.webp"
             alt="Williamson Prestige Instagram feed — recent posts"
             loading="lazy"
           />

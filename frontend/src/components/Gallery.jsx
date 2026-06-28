@@ -1,18 +1,18 @@
 const BA_PAIRS = [
   {
-    before: { src: '/images/range-rover-before.jpeg', alt: 'Range Rover Sport — foam pre-wash' },
-    after:  { src: '/images/range-rover-after.jpeg',  alt: 'Range Rover Sport — showroom finish' },
-    label: 'Range Rover Sport · Full Exterior Detail',
+    left:  { src: '/images/range-rover-after.jpeg',    alt: 'Range Rover Sport — exterior' },
+    right: { src: '/images/range-rover-interior.jpeg', alt: 'Range Rover Sport — interior' },
+    label: 'Maintenance Plan — Deep clean service for half the price, every month.',
   },
   {
-    before: { src: '/images/corsa-before.jpeg', alt: 'Vauxhall Corsa interior — before' },
-    after:  { src: '/images/corsa-after.jpeg',  alt: 'Vauxhall Corsa interior — after' },
-    label:  'THE INTERIOR RESET — A full scrub and steam from roof lining to carpets. Freshly sanitised. Freshly cleaned. Freshly RESET.',
+    left:  { src: '/images/corsa-before.jpeg', alt: 'Vauxhall Corsa interior — before', badge: 'Before' },
+    right: { src: '/images/corsa-after.jpeg',  alt: 'Vauxhall Corsa interior — after',  badge: 'After' },
+    label: 'THE INTERIOR RESET — A full scrub and steam from roof lining to carpets. Freshly sanitised. Freshly cleaned. Freshly RESET.',
   },
   {
-    before: { src: '/images/defender-before.jpeg', alt: 'Land Rover Defender — heavily soiled' },
-    after:  { src: '/images/defender-after.jpeg',  alt: 'Land Rover Defender — exterior reset' },
-    label:  'THE EXTERIOR RESET — An exterior safe wash and liquid decontamination, leaving your paintwork popping, no matter how dirty.',
+    left:  { src: '/images/defender-before.jpeg', alt: 'Land Rover Defender — heavily soiled', badge: 'Before' },
+    right: { src: '/images/defender-after.jpeg',  alt: 'Land Rover Defender — exterior reset',  badge: 'After' },
+    label: 'THE EXTERIOR RESET — An exterior safe wash and liquid decontamination, leaving your paintwork popping, no matter how dirty.',
   },
 ]
 
@@ -43,12 +43,12 @@ export default function Gallery() {
           {BA_PAIRS.map((pair) => (
             <div key={pair.label} className="ba-pair">
               <div className="ba-image">
-                <img src={pair.before.src} alt={pair.before.alt} loading="lazy" />
-                <span className="ba-label ba-label-before">Before</span>
+                <img src={pair.left.src} alt={pair.left.alt} loading="lazy" />
+                {pair.left.badge && <span className="ba-label ba-label-before">{pair.left.badge}</span>}
               </div>
               <div className="ba-image">
-                <img src={pair.after.src} alt={pair.after.alt} loading="lazy" />
-                <span className="ba-label ba-label-after">After</span>
+                <img src={pair.right.src} alt={pair.right.alt} loading="lazy" />
+                {pair.right.badge && <span className="ba-label ba-label-after">{pair.right.badge}</span>}
               </div>
               <p className="ba-caption">{pair.label}</p>
             </div>
