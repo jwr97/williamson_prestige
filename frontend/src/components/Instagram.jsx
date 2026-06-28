@@ -9,7 +9,7 @@ export default function Instagram() {
   useEffect(() => {
     if (!WIDGET_ID) return
     const script = document.createElement('script')
-    script.src = '//cdn.lightwidget.com/widgets/lightwidget.plugin.js'
+    script.src = '//cdn.lightwidget.com/widgets/lightwidget.js'
     script.async = true
     document.body.appendChild(script)
     return () => { document.body.removeChild(script) }
