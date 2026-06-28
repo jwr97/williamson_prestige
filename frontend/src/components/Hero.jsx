@@ -12,7 +12,6 @@ export default function Hero() {
       <div className="hero-grid" />
       <div className="container">
         <div className="hero-content">
-          <img src="/images/logo-hero.jpeg" alt="Williamson Prestige" className="hero-logo-img" />
           <h1 className="hero-title">
             Your Vehicle,<br />
             Our <em>Obsession</em>

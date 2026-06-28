@@ -1,18 +1,20 @@
 import { useEffect } from 'react'
 
-// 1. Go to https://lightwidget.com and connect @williamson.prestige
-// 2. Customise the grid layout, then copy the widget ID from the embed code
-// 3. Paste it below — the feed will appear immediately
-const WIDGET_ID = 'd83bf06feb735b98b2856d067b8f4062'
+// 1. Create a free feed at https://behold.so and connect @williamson.prestige
+//    (Instagram must be a Business/Creator account linked to a Facebook Page)
+// 2. Copy the feed ID from your Behold dashboard and paste it below
+const FEED_ID = ''
 
 export default function Instagram() {
   useEffect(() => {
-    if (!WIDGET_ID) return
+    if (!FEED_ID) return
+    const id = 'behold-widget-script'
+    if (document.getElementById(id)) return
     const script = document.createElement('script')
-    script.src = '//cdn.lightwidget.com/widgets/lightwidget.js'
-    script.async = true
+    script.id = id
+    script.type = 'module'
+    script.src = 'https://w.behold.so/widget.js'
     document.body.appendChild(script)
-    return () => { document.body.removeChild(script) }
   }, [])
 
   return (
@@ -27,16 +29,9 @@ export default function Instagram() {
           </p>
         </div>
 
-        {WIDGET_ID ? (
+        {FEED_ID ? (
           <div className="instagram-feed">
-            <iframe
-              src={`//lightwidget.com/widgets/${WIDGET_ID}.html`}
-              scrolling="no"
-              allowTransparency="true"
-              className="lightwidget-widget"
-              style={{ width: '100%', border: 0, overflow: 'hidden', minHeight: 420 }}
-              title="Instagram feed — @williamson.prestige"
-            />
+            <behold-widget feed-id={FEED_ID}></behold-widget>
           </div>
         ) : (
           <div className="instagram-setup">

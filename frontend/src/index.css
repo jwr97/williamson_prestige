@@ -83,8 +83,8 @@ input, textarea, select { font-family: inherit; }
 
 /* ===== LOGO IMAGE ===== */
 .navbar-logo-img {
-  width: 140px;
-  height: 80px;
+  width: 154px;
+  height: 88px;
   object-fit: cover;
   object-position: center 45%;
   mix-blend-mode: screen;

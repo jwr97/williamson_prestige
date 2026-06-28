@@ -15,11 +15,6 @@ export default function Footer() {
     <footer className="footer">
       <div className="container">
         <div className="footer-inner">
-          <div>
-            <div className="footer-logo">
-              <img src="/images/logo.jpeg" alt="Williamson Prestige" className="footer-logo-img" />
-            </div>
-          </div>
           <ul className="footer-links">
             {LINKS.map(([id, label]) => (
               <li key={id}>
